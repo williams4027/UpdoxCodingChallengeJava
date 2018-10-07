@@ -3,8 +3,10 @@ package com.updox.prime;
 import java.util.List;
 
 /**
+ * Basic interface for a prime number generation class that can verify an integer is prime 
+ * and create an ordered list of integers based on a given input range.
+ * 
  * @author Blake Williams
- *
  */
 public interface PrimeNumberGenerator {
 	

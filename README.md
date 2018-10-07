@@ -1,18 +1,18 @@
 # Updox Java Coding Challenge README
 Blake Williams
 
-Welcome to my coding submission. I am very excited to demonstrate my object oriented programming skills for the Updox team, so let's get started!
+Welcome to my Java coding submission. I am very excited to demonstrate my object oriented programming skills for the Updox team, so let's get started!
 
 # Run
-Ensure Java v1.8 or later is installed.
+Ensure Java v1.8 or later is installed. This project was built using Maven.
 
 From the project root, run the following command to execute the included jar.
 
-> java -jar dist/UpdoxCodingChallenge.jar
+> java -jar target/UpdoxCodingChallengeJava-0.0.1-SNAPSHOT.jar
 
-# Build
-Ensure Ant v1.10 or later is installed. The current project was built using Ant and placed in the dist/ directory, but can be rebuilt by having Ant installed and running the following from the project root:
+# Testing
+All tests were written using JUnit 5 and are found in the src/main/test directory.
++ Code Coverage: 99.0% (100% code coverage outside of the System.in stream catch blocks for IOExceptions) 
++ JUnit Tests: 14/14 passing
 
-> ant run
-
-This will place an executable jar in the dist/ directory. If using Eclipse, simply perform a default project clean and build the classes natively.
+A test driven development approach was followed to generate a range of initial test cases and build out the prime number generator.

@@ -1,6 +1,6 @@
-package com.updox.prime;
+package com.updox;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -8,28 +8,30 @@ import java.util.HashSet;
 
 import org.junit.jupiter.api.Test;
 
+import com.updox.prime.UpdoxPrimeNumberGenerator;
+
 class PrimeNumberGeneratorTest {
 	private UpdoxPrimeNumberGenerator primeNumberGenerator = new UpdoxPrimeNumberGenerator(); 
 	
 	@Test
-	void BaseZeroIsPrimeTest() {
+	void IsPrimeBaseZeroTest() {
 		assertEquals(false, primeNumberGenerator.isPrime(0));
 	}
 	
 	@Test
-	void BaseNegativeIsPrimeTest() {
+	void IsPrimeBaseNegativeTest() {
 		assertEquals(false, primeNumberGenerator.isPrime(-1));
 		assertEquals(false, primeNumberGenerator.isPrime(-100));
 	}
 	
 	@Test
-	void BaseOneIsPrimeTest() {
+	void IsPrimeBaseOneTest() {
 		assertEquals(false, primeNumberGenerator.isPrime(1));
 	}
 	
 	@Test
-	void BaseTwoIsPrimeTest() {
-		assertEquals(false, primeNumberGenerator.isPrime(2));
+	void IsPrimeBaseTwoTest() {
+		assertEquals(true, primeNumberGenerator.isPrime(2));
 	}
 	
 	@Test

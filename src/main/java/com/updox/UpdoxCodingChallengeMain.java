@@ -19,21 +19,29 @@ public class UpdoxCodingChallengeMain {
 	 * Executable command to collect a start and end value range from the user and
 	 * generate an ordered list of all prime numbers in that range and log the results to the console.
 	 * 
-	 * @param args 
+	 * @param args Will not be used
+	 * @throws IOException If the input stream is broken
 	 */
 	public static void main(String[] args) {
 		BufferedReader inputReader = null;
 		
 		System.out.println("Prime Number Generator Started. Please specify the start value of the range of numbers to test:");
 		try {
+			// Read input from the command line
 			inputReader = new BufferedReader(new InputStreamReader(System.in));
-			String startValueInput = inputReader.readLine();
+			String startValueInput;
+			startValueInput = inputReader.readLine();
 			System.out.println("Please specify the end value of the range of numbers to test:");
 			String endValueInput = inputReader.readLine();
-			performPrimeGeneration(startValueInput, endValueInput);
+			
+			// Process input and produce list of prime numbers
+			List<Integer> primeNumberList = performPrimeGeneration(startValueInput, endValueInput);
+			System.out.println("Prime Numbers: " + primeNumberList);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {
+			// Close the reader
 			if (inputReader != null) {
 				try {
 					inputReader.close();
@@ -58,8 +66,6 @@ public class UpdoxCodingChallengeMain {
 		try {
 			startValue = Integer.parseInt(userStartValueInput);
 			endValue = Integer.parseInt(userEndValueInput);
-			System.out.println("Start Value: " + startValue);
-			System.out.println("End Value: " + endValue);
 		} catch (NumberFormatException e) {
 			System.err.println("User input values for prime number generation are not valid integers.");
 		}
